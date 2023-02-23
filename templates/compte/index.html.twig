@@ -1,0 +1,83 @@
+{% extends 'baseClient.html.twig' %}
+
+{% block body %}
+           
+<div class="page-wrapper">
+        <div class="container-xl">
+          <div class="page-header d-print-none">
+            <div class="row align-items-center">
+              <div class="col">
+                <h2 class="page-title">My Accounts</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+           <div class="page-body">
+          <div class="container-xl">
+            <div class="row row-cards">
+              <div class="col-12">
+                <div class="card">
+                  <div class="table-responsive">
+                    <table
+                      class="table table-vcenter table-mobile-md card-table"
+                    >
+                      <thead>
+                        <tr>
+                          <th> ACCOUNT TYPE</th>
+                          <th> CREATION DATE</th>
+                          <th> CLOSED  DATE</th>
+                          <th> SOLDE</th>
+                          <th> RED SOLDE</th>
+                          <th>STATUS</th>
+                          <th> DETAILS</th>                     
+                        </tr>
+                      </thead>
+                      <tbody>   
+                     {% for compte in comptes %}
+                        <tr>                           
+                          <td data-label="Account dd">
+                            <div>{{ compte.idType }}</div>
+                          </td>
+                          <td data-label="Date Creation">
+                            <div>{{ compte.dateCreation ? compte.dateCreation|date('Y-m-d') : '' }}</div>
+                          </td>
+                          <td data-label="Account Closed Date">
+                            <div>{{ compte.dateFermeture ? compte.dateFermeture|date('Y-m-d') : '' }}</div>
+                          </td>
+                          <td data-label="Account solde">
+                            <div>{{ compte.solde }}</div>
+                          </td>
+                          <td data-label="Account solde Red">
+                            <div>{{ compte.redSolde }}</div>
+                          </td>
+                          <td data-label="Account status">
+                            <div>{{ compte.statue }}</div>
+                          </td>                         
+                          <td data-label="Options">
+                              <a
+                                href="{{ path('compte_details', {'id': compte.id}) }}"
+                                class="btn btn-primary"
+                              >
+                                Details
+                              </a>                          
+                          </td>
+                        </tr>   
+                      {% else %}
+                        <tr>
+                            <td colspan="6">no Account found</td>
+                        </tr>
+                      {% endfor %}                   
+                    </tbody>
+                    </table>
+                  </div>
+              
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+</div>
+
+
+
+{% endblock %}

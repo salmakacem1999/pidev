@@ -1,0 +1,79 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block body %}
+         <!-- Container Fluid-->
+          <div class="container-fluid" id="container-wrapper">
+            <div class="card">
+              <div
+                class="d-sm-flex align-items-center justify-content-between py-3"
+              >
+                <h5 class="mb-0 text-gray-800 pl-3">Wire Transfer Bank</h5>
+                <ol class="breadcrumb m-0 py-0">
+                  <li class="breadcrumb-item">
+                    <a
+                      href="https://product.geniusocean.com/genius-bank/admin/dashboard"
+                      >Dashboard</a
+                    >
+                  </li>
+                  <li class="breadcrumb-item">
+                    <a
+                      href="https://product.geniusocean.com/genius-bank/admin/wire-transfer-banks"
+                      >Wire Transfer Bank</a
+                    >
+                  </li>
+                </ol>
+              </div>
+            </div>
+
+            <div class="row mt-3">
+              <div class="col-lg-12"> 
+                    {# <div class="row align-items-center">               
+                        <div class="col-auto ms-auto d-print-none">
+                            <div class="btn-list">
+                                <a href=" {{ path('wireTransfer_create') }}" class="btn btn-primary d-none d-sm-inline-block">
+                                       <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
+                                             Add Wire Transfer
+                                </a>
+                            </div>
+                        </div>
+                    </div> #}
+                  <div class="table-responsive p-3">
+                    <table
+                      id="geniustable"
+                      class="table table-hover dt-responsive"
+                      cellspacing="0"
+                      width="100%"
+                    >
+                      <thead class="thead-light">
+                        <tr>
+                          <th>Title</th>
+                          <th>Routing Number</th>
+                          <th>Currency</th>
+                          <th>Transfer Limit</th>
+                          <th>Status</th>
+                          <th>Action</th>
+                        </tr>
+                            <tr>
+                            <td>The City Bank Limited</td>
+                            <td>	987456123	</td>
+                            <td>USD </td>
+                            <td>Min: $10 Max: $10000</td>
+                            <td>activated</td>
+                           <td >
+                              <button class="btn btn-success " type="button">Accept  </button> |
+                              <button class="btn btn-danger " type="button" >Refuse  </button>
+                           </td>
+                        </tr> 
+                      </thead>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
+          
+          </div>
+          <!---Container Fluid-->
+        
+{% endblock %}

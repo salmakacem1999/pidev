@@ -1,0 +1,36 @@
+
+{% extends 'baseAdmin.html.twig' %}
+
+{% block body %}
+    
+     <div class="page-wrapper">
+        <div class="container-xl">
+          <div class="page-header d-print-none">
+            <div class="row align-items-center">
+              <div class="col">
+                <h2 class="page-title">Demand details</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="page-body">
+          <div class="container-xl">
+            <div class="row row-cards">
+              <div class="col-12">
+                <div class="card mb-4">
+                  <div class="card-body">
+                      
+                  {{ include('compte/_form.html.twig', {'button_label': 'Update'}) }}
+                 {{ include('compte/_delete_form.html.twig') }}
+          
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        
+{% endblock %}
+
